@@ -23,9 +23,9 @@
 ;; 应用字体设置
 (set-font my/en-font my/zh-font my/font-size)
 (add-hook 'after-make-frame-functions
-	  (lambda (frame)
-	    (select-frame frame)
-	    (set-font my/en-font my/zh-font my/font-size)))
+          (lambda (frame)
+            (select-frame frame)
+            (set-font my/en-font my/zh-font my/font-size)))
 
 ;; 鼠标滚轮缩放字体大小
 (global-set-key (kbd "<C-mouse-4>") 'text-scale-increase)
