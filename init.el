@@ -1,18 +1,8 @@
 (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
                          ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa-stable/")
                          ("org"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")))
+(setq package-enable-at-startup nil)
 (package-initialize)
-
-(defun require-package (package)
-  (setq-default highlight-tabs t)
-  "Install given PACKAGE."
-  (unless (package-installed-p package)
-    (unless (assoc package package-archive-contents)
-      (package-refresh-contents))
-    (package-install package)))
-
-(setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
-(load-file custom-file)
 
 ;; 快速打开配置文件
 (defun open-init-file()
@@ -23,13 +13,21 @@
 ;; 模块化配置
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-better-defaults)
-(require 'init-ui)
-(require 'init-vim)
+(require 'init-packages)
 
-;; company
-(add-hook 'after-init-hook 'global-company-mode)
 
-;; 实时显示快捷键列表
-(which-key-mode 1)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
 (provide 'init)
