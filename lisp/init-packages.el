@@ -57,8 +57,8 @@
 
 ;;Java dev
 (use-package meghanada
+  :defer t
   :init (add-package 'meghanada)
-  :config
   (add-hook 'java-mode-hook
             (lambda ()
               ;; meghanada-mode on
@@ -67,6 +67,7 @@
               (setq c-basic-offset 2)
               ;; use code format
               (add-hook 'before-save-hook 'meghanada-code-beautify-before-save)))
+  :config
   (cond
    ((eq system-type 'windows-nt)
     (setq meghanada-java-path (expand-file-name "bin/java.exe" (getenv "JAVA_HOME")))
