@@ -1,7 +1,6 @@
 ;;gruvbox 主题
 (use-package gruvbox-theme
-  :init (add-package 'gruvbox-theme)
-  :config
+  :init
   (load-theme 'gruvbox t)
   (setq evil-emacs-state-cursor '("red" box))
   (setq evil-normal-state-cursor '("green" box))

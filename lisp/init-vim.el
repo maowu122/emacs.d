@@ -1,7 +1,7 @@
 ;;VIM 模式
 (use-package evil
-  :init (add-package 'evil)
-  :config
+ :ensure t
+  :init
   (evil-mode 1)
   ;; remove default evil-toggle-key C-z, manually setup later
   (setq evil-toggle-key "")
